@@ -1,0 +1,663 @@
+:root {
+  /* основной цвет текста #757575 */
+  --main-text-color: #757575;
+  /* вторичный цвет текста #212121 */
+  --secondary-text-color: #212121;
+  /* акцент #2196F3 */
+  --accent-color: #2196f3;
+  /* цвет лого */
+  --logo-text-color: #000000;
+  /* основной цвет заливки #E5E5E5 */
+  /* --main-background-color: #e5e5e5; */
+  /* вторичный цвет заливки #FFFFFF */
+  --secondary-background-color: #ffffff;
+  /* цвет текста героя */
+  --hero-text-color: #ffffff;
+  /* заливка героя ##c4c4c4 */
+  --hero-background-color: #c4c4c4;
+  /* заливка кнопки героя при фокусе #188CE8 */
+  --hero-button-hover-color: #188ce8;
+  /* заливка секции команды */
+  --team-background-color: #f5f4fa;
+  /* цвет иконок #AFB1B8*/
+  --icon-color: #afb1b8;
+  /* заливка футера #2F303A*/
+  --footer-backgorund-color: #2f303a;
+  /* цвет ссылок в футере */
+  --footer-link-color: rgba(255, 255, 255, 0.6);
+  /* функция распределения времени для анимаций */
+  --animation-cubic: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* стилизация всей страницы */
+
+/* roboto 400,500,700,900 */
+/* raleway 700 */
+body {
+  /* background-color: var(--main-background-color); */
+  color: var(--main-text-color);
+  /* системные шрифты font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif; */
+  font-family: roboto, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, noto, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+/* Утилиты */
+/* убирает точки и левый отступ у списков*/
+.list {
+  list-style: none;
+  padding: 0;
+}
+/* убирает подчеркивание ссылок */
+.link {
+  text-decoration: none;
+}
+/* скрывает визуально контент */
+.concealer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* обнуление внешних отступов */
+h1,
+h2,
+h3,
+ul,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* закругленные края кнопок */
+.button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+/* смена цвета текста */
+.main-text {
+  color: var(--main-text-color);
+}
+.accent-text {
+  color: var(--accent-color);
+}
+.secondary-text {
+  color: var(--secondary-text-color);
+}
+/* смена цвета на accent при hover focus */
+.hover-accent:hover,
+.focus-accent:focus {
+  color: var(--accent-color);
+}
+/* вторичные цвета заливки */
+.secondary-background {
+  background-color: var(--secondary-background-color);
+}
+.hero-background {
+  background-color: var(--hero-background-color);
+}
+.accent-background {
+  background-color: var(--accent-color);
+}
+/* контейнер для центрирования и ограничения контента по ширине */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 3px solid red; */
+}
+/* контейнер секций */
+.section {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/* класс для стилизации изображений */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* задание свойства флекс */
+.flex {
+  display: flex;
+}
+/* конец Утилит */
+
+/* стили шапки */
+.header {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--secondary-background-color);
+  border-bottom: 1px solid #ececec;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+/* логотип */
+.logo {
+  font-family: raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+.logo-accent {
+  color: var(--accent-color);
+}
+.logo-text {
+  color: var(--logo-text-color);
+}
+.header-logo {
+  margin-right: 93px;
+}
+/* выделение текущей страницы в навигации */
+.header-link.header-link--current {
+  position: relative;
+  color: var(--accent-color);
+}
+.header-link--current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.header-list {
+  display: flex;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  align-items: center;
+}
+.header-item:not(:last-child) {
+  margin-right: 50px;
+}
+.header-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--secondary-text-color);
+  transition: color 250ms var(--animation-cubic);
+}
+.header-link:hover,
+.header-link:focus {
+  color: var(--accent-color);
+}
+/* иконки в контактах */
+.header-link--contacts {
+  display: inline-flex;
+  align-items: center;
+  color: var(--main-text-color);
+}
+.header-icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+/* стили героя */
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--hero-background-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--hero-text-color);
+  text-align: center;
+}
+.hero-title {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hero-button {
+  /* у самой кнопки с классом .button граница 1 px */
+  padding-left: 31px;
+  padding-right: 31px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--hero-text-color);
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: color 250ms var(--animation-cubic);
+}
+.hero-button:hover,
+.hero-button:focus {
+  background-color: var(--hero-button-hover-color);
+}
+
+/* Модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* прячет модальное окно */
+.backdrop.is-hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+.backdrop {
+  opacity: 1;
+  transition: opacity 250ms var(--animation-cubic);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: var(--hero-text-color);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--animation-cubic);
+}
+.modal-button {
+  position: absolute;
+  left: calc(100% - 8px);
+  top: 8px;
+  transform: translate(-100%, 0);
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: var(--secondary-background-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-icon {
+  color: var(--logo-text-color);
+}
+/* стили особенностей */
+.feature {
+  padding-bottom: 47px;
+}
+.feature-list {
+  display: flex;
+}
+.feature-subtitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
+.feature-item {
+  width: calc((100% - 90px) / 4);
+}
+.feature-item:not(:last-child) {
+  margin-right: 30px;
+}
+.feature-icon {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  background: var(--team-background-color);
+  border-radius: 4px;
+}
+
+/* заголовок секций */
+.title {
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
+
+/* стили чем мы занимаемся*/
+.what {
+  padding-top: 47px;
+}
+.what-list {
+  display: flex;
+}
+/* карточка  */
+.what-item {
+  width: calc((100% - 60px) / 3);
+  height: 294px;
+  perspective: 600px;
+}
+/* контейнер для содержимого карточки */
+.what-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 250ms var(--animation-cubic);
+}
+.what-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+/* задняя часть карточки */
+.what-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+}
+/* этикетка на карточке */
+.what-label {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transform: translate(0, -100%);
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--hero-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  opacity: 0;
+  transition: opacity 250ms var(--animation-cubic) 250ms;
+}
+.what-item:hover .what-card {
+  transform: rotateY(180deg);
+}
+.what-item:hover .what-label {
+  opacity: 1;
+}
+/* оступы между карточками*/
+.what-item:not(:last-child),
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+/* стили команды */
+.team {
+  background-color: var(--team-background-color);
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+.team-list {
+  display: flex;
+}
+/* стили карточки команды */
+.team-item {
+  width: calc((100% - 90px) / 4);
+  padding-bottom: 30px;
+  border-bottom: 1px solid transparent;
+  border-radius: 4px;
+  background-color: var(--secondary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* имя члена команды */
+.team-subtitle {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: inherit;
+  color: var(--secondary-text-color);
+}
+/* блок соцсетей */
+.social {
+  display: flex;
+}
+.team-social {
+  margin-top: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.social-item {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border: none;
+  border-radius: 50%;
+  color: var(--icon-color);
+  transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic);
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-link {
+  color: inherit;
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+/* постоянные клиенты */
+.clients-title {
+  margin-bottom: 50px;
+}
+.clients-list {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.clients-item {
+  width: calc((100%-150px) / 6);
+  padding: 15px 31px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--icon-color);
+  transition: color 250ms var(--animation-cubic), border-color 250ms var(--animation-cubic);
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-link {
+  color: inherit;
+}
+.clients-icon {
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
+}
+.clients-item:hover,
+.clients-link:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+/* стили футера */
+.footer {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 0;
+  background-color: var(--footer-backgorund-color);
+}
+.footer-text {
+  color: var(--hero-text-color);
+  font-style: normal;
+}
+.address {
+  margin-top: 20px;
+}
+.footer-link {
+  margin-top: 9px;
+  color: var(--footer-link-color);
+  font-style: normal;
+  transition: color 250ms var(--animation-cubic);
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--accent-color);
+}
+/* секция присоединяйтесь */
+.join {
+  margin-left: 70px;
+  padding-top: 12px;
+  color: var(--hero-text-color);
+}
+.join-title {
+  margin-bottom: 20px;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.join-social-item {
+  color: var(--hero-text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* стили портфолио */
+/* фильтр */
+/*стили кнопок*/
+.filter-button {
+  /* у самой кнопки с классом .button граница 1 px */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 21px;
+  padding-right: 21px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  color: var(--secondary-text-color);
+  background-color: var(--team-background-color);
+  transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic),
+    box-shadow 250ms var(--animation-cubic);
+}
+/* эффекты кнопок при hover focus */
+.filter-button:hover,
+.filter-button:focus {
+  color: var(--hero-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+/* отступы и позиционирование фильтра */
+.filter {
+  margin-bottom: 34px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+/* отступы между кнопками фильтра  */
+.filter-item:not(:last-child) {
+  margin-right: 8px;
+}
+/* собственно портфолио */
+
+/* стили блоков портфолио */
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* ширина карточки */
+.portfolio-item {
+  width: calc((100% - 60px) / 3);
+  background-color: var(--secondary-background-color);
+  transition: box-shadow 250ms var(--animation-cubic);
+}
+/* оступы между карточками */
+.portfolio-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.portfolio-item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-description {
+  position: absolute;
+  left: 0;
+  top: 200%;
+  transform: translate(0, -100%);
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  color: var(--hero-text-color);
+  background: rgba(33, 150, 243, 0.9);
+  font-size: 18px;
+  line-height: 1.56;
+  transition: transform 250ms var(--animation-cubic);
+}
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-item:hover .portfolio-description,
+.portfolio-link:focus .portfolio-description {
+  transform: translate(0, -100%) translateY(-100%);
+}
+/* название продукта */
+.portfolio-subtitle {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--secondary-text-color);
+}
+/* тип продукта */
+.portfolio-text {
+  color: var(--main-text-color);
+  font-size: 16px;
+  line-height: 1.87;
+}
+/* нижняя часть карточки */
+.portfolio-bottom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+.social-item:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
+}
