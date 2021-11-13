@@ -75,8 +75,56 @@
       <!-- Модальное окно -->
       <div class="backdrop is-hidden" data-modal>
         <div class="modal">
+          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+          <!-- Форма -->
+          <form class="modal-form" name="callback">
+            <label class="modal-item">
+              <span class="modal-label">Имя</span>
+              <input type="name" class="modal-input" name="name" placeholder=" " />
+              <svg class="modal-icon">
+                <use href="./images/sprite.svg#icon-person"></use>
+              </svg>
+            </label>
+            <label class="modal-item">
+              <span class="modal-label">Телефон</span>
+              <input type="tel" class="modal-input" name="phone-number" placeholder=" " />
+              <svg class="modal-icon">
+                <use href="./images/sprite.svg#icon-phone"></use>
+              </svg>
+            </label>
+            <label class="modal-item">
+              <span class="modal-label">Почта</span>
+              <input type="email" class="modal-input" name="email" placeholder=" " />
+              <svg class="modal-icon">
+                <use href="./images/sprite.svg#icon-email"></use>
+              </svg>
+            </label>
+            <label class="modal-item">
+              <span class="modal-label">Комментарий</span>
+              <textarea
+                class="modal-textarea"
+                name="comment"
+                placeholder="Введите текст"
+              ></textarea>
+            </label>
+            <!-- Принять условия -->
+            <label class="accept-item">
+              <input type="checkbox" class="accept-input concealer" name="accept" required />
+              <div class="accept-checkbox">
+                <svg class="accept-icon">
+                  <use href="./images/sprite.svg#icon-check"></use>
+                </svg>
+              </div>
+              <span class="accept-label"
+                >Соглашаюсь с рассылкой и принимаю
+                <a class="accept-link" href="">Условия договора</a>
+              </span>
+            </label>
+            <button class="modal-accept button" type="submit">Отправить</button>
+          </form>
+          <!-- Кнопка закрытия -->
           <button class="modal-button" type="button" data-modal-close>
-            <svg class="modal-icon" width="18px" height="18px">
+            <svg class="modal-close" width="18px" height="18px">
               <use href="./images/sprite.svg#icon-close"></use>
             </svg>
           </button>
@@ -409,7 +457,7 @@
         </div>
         <!-- Присоединяйтесь -->
         <section class="join">
-          <h2 class="join-title">Присоединяйтесь</h2>
+          <h2 class="footer-title">Присоединяйтесь</h2>
           <ul class="social list flex">
             <li class="join-social-item social-item" aria-label="Инстаграм">
               <a href="" class="social-link link">
@@ -440,6 +488,26 @@
               </a>
             </li>
           </ul>
+        </section>
+        <!-- Подпишитесь -->
+        <section class="subscribe">
+          <h2 class="footer-title">Подпишитесь на рассылку</h2>
+          <form class="subscribe-form" name="subscribe">
+            <label>
+              <input
+                class="subscribe-input"
+                type="email"
+                name="subscribe-email"
+                placeholder="E-mail"
+              />
+            </label>
+            <button class="subscribe-button button" type="submit">
+              Подписаться
+              <svg class="subscribe-icon">
+                <use href="./images/sprite.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
         </section>
       </div>
     </footer>
