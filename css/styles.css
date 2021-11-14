@@ -126,8 +126,6 @@ p {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-}
-.logo-accent {
   color: var(--accent-color);
 }
 .logo-text {
