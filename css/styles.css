@@ -78,31 +78,6 @@ p {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-/* смена цвета текста */
-.main-text {
-  color: var(--main-text-color);
-}
-.accent-text {
-  color: var(--accent-color);
-}
-.secondary-text {
-  color: var(--secondary-text-color);
-}
-/* смена цвета на accent при hover focus */
-.hover-accent:hover,
-.focus-accent:focus {
-  color: var(--accent-color);
-}
-/* вторичные цвета заливки */
-.secondary-background {
-  background-color: var(--secondary-background-color);
-}
-.hero-background {
-  background-color: var(--hero-background-color);
-}
-.accent-background {
-  background-color: var(--accent-color);
-}
 /* контейнер для центрирования и ограничения контента по ширине */
 .container {
   width: 1200px;
@@ -671,7 +646,7 @@ p {
   line-height: 1.14;
   text-transform: uppercase;
 }
-.join-social-item {
+.join-item {
   color: var(--hero-text-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
