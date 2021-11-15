@@ -396,7 +396,7 @@ p {
   width: 30px;
   height: 30px;
   padding: 5px;
-  background: var(--secondary-background-color);
+  background-color: var(--secondary-background-color);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--logo-text-color);
