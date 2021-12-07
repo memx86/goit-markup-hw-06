@@ -73,10 +73,11 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* закругленные края кнопок */
+/* общие стили кнопок */
 .button {
   border: 1px solid transparent;
   border-radius: 4px;
+  cursor: pointer;
 }
 /* контейнер для центрирования и ограничения контента по ширине */
 .container {
@@ -202,6 +203,7 @@ p {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  width: 696px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -219,7 +221,6 @@ p {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  cursor: pointer;
   color: var(--hero-text-color);
   background-color: var(--accent-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -401,6 +402,7 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--logo-text-color);
   transition: color 250ms var(--animation-cubic);
+  cursor: pointer;
 }
 .modal-close {
   fill: currentColor;
@@ -708,7 +710,6 @@ p {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.03em;
-  cursor: pointer;
   color: var(--secondary-text-color);
   background-color: var(--team-background-color);
   transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic),
