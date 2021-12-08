@@ -73,11 +73,13 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+button {
+  cursor: pointer;
+}
 /* общие стили кнопок */
 .button {
   border: 1px solid transparent;
   border-radius: 4px;
-  cursor: pointer;
 }
 /* контейнер для центрирования и ограничения контента по ширине */
 .container {
@@ -402,7 +404,6 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--logo-text-color);
   transition: color 250ms var(--animation-cubic);
-  cursor: pointer;
 }
 .modal-close {
   fill: currentColor;
@@ -554,7 +555,11 @@ p {
   padding-left: 32px;
   padding-right: 32px;
 }
-.social-item {
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-link {
+  display: block;
   width: 44px;
   height: 44px;
   padding: 12px;
@@ -562,12 +567,6 @@ p {
   border-radius: 50%;
   color: var(--icon-color);
   transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic);
-}
-.social-item:not(:last-child) {
-  margin-right: 10px;
-}
-.social-link {
-  color: inherit;
 }
 .social-icon {
   width: 20px;
@@ -585,25 +584,24 @@ p {
 }
 .clients-item {
   width: calc((100%-150px) / 6);
-  padding: 15px 31px;
-  border: 1px solid var(--icon-color);
-  border-radius: 4px;
-  cursor: pointer;
-  color: var(--icon-color);
-  transition: color 250ms var(--animation-cubic), border-color 250ms var(--animation-cubic);
 }
 .clients-item:not(:last-child) {
   margin-right: 30px;
 }
 .clients-link {
-  color: inherit;
+  display: block;
+  padding: 15px 31px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  color: var(--icon-color);
+  transition: color 250ms var(--animation-cubic), border-color 250ms var(--animation-cubic);
 }
 .clients-icon {
   width: 106px;
   height: 60px;
   fill: currentColor;
 }
-.clients-item:hover,
+.clients-link:hover,
 .clients-link:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
@@ -624,6 +622,7 @@ p {
   margin-top: 20px;
 }
 .footer-link {
+  display: block;
   margin-top: 9px;
   color: var(--footer-link-color);
   font-style: normal;
@@ -646,7 +645,7 @@ p {
   line-height: 1.14;
   text-transform: uppercase;
 }
-.join-item {
+.social-link--join {
   color: var(--hero-text-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -695,6 +694,11 @@ p {
   width: 24px;
   height: 24px;
   fill: currentColor;
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
 }
 /* стили портфолио */
 /* фильтр */
@@ -806,9 +810,4 @@ p {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
-}
-.social-item:hover,
-.social-link:focus {
-  background-color: var(--accent-color);
-  color: var(--hero-text-color);
 }
