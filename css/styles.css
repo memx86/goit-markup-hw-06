@@ -160,6 +160,7 @@ button {
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-color);
+  outline: none;
 }
 /* выделение текущей страницы в навигации */
 .header-link--current {
@@ -234,6 +235,7 @@ button {
 .hero-button:hover,
 .hero-button:focus {
   background-color: var(--hero-button-hover-color);
+  outline: none;
 }
 
 /* Модальное окно */
@@ -390,8 +392,10 @@ button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms var(--animation-cubic);
 }
-.modal-accept:hover {
+.modal-accept:hover,
+.modal-accept:focus {
   background-color: var(--hero-button-hover-color);
+  outline: none;
 }
 /* кнопка закрытия */
 .modal-button {
@@ -411,8 +415,10 @@ button {
 .modal-close {
   fill: currentColor;
 }
-.modal-button:hover {
+.modal-button:hover,
+.modal-button:focus {
   color: var(--accent-color);
+  outline: none;
 }
 
 /* стили особенностей */
@@ -615,6 +621,7 @@ button {
 .clients-link:focus {
   color: var(--accent-color);
   border-color: var(--accent-color);
+  outline: none;
 }
 /* стили футера */
 .footer {
@@ -641,6 +648,7 @@ button {
 .footer-link:hover,
 .footer-link:focus {
   color: var(--accent-color);
+  outline: none;
 }
 /* секция присоединяйтесь */
 .join {
@@ -698,6 +706,12 @@ button {
   color: inherit;
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms var(--animation-cubic);
+}
+.subscribe-button:hover,
+.subscribe-button:focus {
+  background-color: var(--hero-button-hover-color);
+  outline: none;
 }
 .subscribe-icon {
   margin-left: 10px;
@@ -709,6 +723,7 @@ button {
 .social-link:focus {
   background-color: var(--accent-color);
   color: var(--hero-text-color);
+  outline: none;
 }
 /* стили портфолио */
 /* фильтр */
@@ -736,6 +751,7 @@ button {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  outline: none;
 }
 /* отступы и позиционирование фильтра */
 .filter {
@@ -784,9 +800,14 @@ button {
   line-height: 1.56;
   transition: transform 250ms var(--animation-cubic);
 }
-.portfolio-item:hover {
+.portfolio-link {
+  display: block;
+}
+.portfolio-item:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  outline: none;
 }
 .portfolio-item:hover .portfolio-description,
 .portfolio-link:focus .portfolio-description {
