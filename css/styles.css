@@ -95,9 +95,6 @@ button {
 }
 /* контейнер секций */
 .section {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -115,9 +112,6 @@ button {
 
 /* стили шапки */
 .header {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: var(--secondary-background-color);
   border-bottom: 1px solid #ececec;
 }
@@ -623,9 +617,6 @@ button {
 }
 /* стили футера */
 .footer {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 60px 0;
   background-color: var(--footer-backgorund-color);
 }
