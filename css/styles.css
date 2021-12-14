@@ -81,8 +81,31 @@ button {
 }
 /* общие стили кнопок */
 .button {
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 50px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--hero-text-color);
+  background-color: var(--accent-color);
   border: 1px solid transparent;
   border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background-color 250ms var(--animation-cubic);
+}
+.button:hover,
+.button:focus {
+  background-color: var(--hero-button-hover-color);
+}
+.button:focus {
+  outline: auto;
 }
 /* контейнер для центрирования и ограничения контента по ширине */
 .container {
@@ -210,27 +233,6 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.hero-button {
-  /* у самой кнопки с классом .button граница 1 px */
-  padding-left: 31px;
-  padding-right: 31px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  color: var(--hero-text-color);
-  background-color: var(--accent-color);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: color 250ms var(--animation-cubic);
-}
-.hero-button:hover,
-.hero-button:focus {
-  background-color: var(--hero-button-hover-color);
-  outline: none;
-}
 
 /* Модальное окно */
 .backdrop {
@@ -262,7 +264,7 @@ button {
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   padding: 40px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--animation-cubic);
@@ -373,30 +375,13 @@ button {
 }
 /* кнопка Отправить */
 .modal-accept {
-  display: block;
   margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  padding: 10px 55px 10px 56px;
-  color: var(--hero-text-color);
-  background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms var(--animation-cubic);
-}
-.modal-accept:hover,
-.modal-accept:focus {
-  background-color: var(--hero-button-hover-color);
-  outline: none;
 }
 /* кнопка закрытия */
 .modal-button {
   position: absolute;
-  left: calc(100% - 8px);
+  right: 8px;
   top: 8px;
-  transform: translate(-100%, 0);
   width: 30px;
   height: 30px;
   padding: 5px;
@@ -682,26 +667,6 @@ button {
 .subscribe-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-.subscribe-button {
-  display: flex;
-  width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.87;
-  font-weight: 700;
-  justify-content: center;
-  align-items: center;
-  color: inherit;
-  background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms var(--animation-cubic);
-}
-.subscribe-button:hover,
-.subscribe-button:focus {
-  background-color: var(--hero-button-hover-color);
-  outline: none;
-}
 .subscribe-icon {
   margin-left: 10px;
   width: 24px;
@@ -769,7 +734,16 @@ button {
       var(--column-number)
   );
   background-color: var(--secondary-background-color);
+}
+.portfolio-link {
+  display: block;
   transition: box-shadow 250ms var(--animation-cubic);
+}
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  outline: none;
 }
 .thumb {
   position: relative;
@@ -788,17 +762,9 @@ button {
   font-size: 18px;
   line-height: 1.56;
   transition: transform 250ms var(--animation-cubic);
+  overflow: auto;
 }
-.portfolio-link {
-  display: block;
-}
-.portfolio-item:hover,
-.portfolio-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  outline: none;
-}
-.portfolio-item:hover .portfolio-description,
+.portfolio-link:hover .portfolio-description,
 .portfolio-link:focus .portfolio-description {
   transform: translate(0, -100%) translateY(-100%);
 }
