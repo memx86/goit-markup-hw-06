@@ -734,10 +734,10 @@ button {
     100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
       var(--column-number)
   );
-  background-color: var(--secondary-background-color);
 }
 .portfolio-link {
   display: block;
+  background-color: var(--secondary-background-color);
   transition: box-shadow 250ms var(--animation-cubic);
 }
 .portfolio-link:hover,
@@ -753,8 +753,7 @@ button {
 .portfolio-description {
   position: absolute;
   left: 0;
-  top: 200%;
-  transform: translate(0, -100%);
+  top: 100%;
   width: 100%;
   height: 100%;
   padding: 63px 24px;
@@ -763,11 +762,11 @@ button {
   font-size: 18px;
   line-height: 1.56;
   transition: transform 250ms var(--animation-cubic);
-  overflow: auto;
+  overflow-y: auto;
 }
 .portfolio-link:hover .portfolio-description,
 .portfolio-link:focus .portfolio-description {
-  transform: translate(0, -100%) translateY(-100%);
+  transform: translateY(-100%);
 }
 /* название продукта */
 .portfolio-subtitle {
