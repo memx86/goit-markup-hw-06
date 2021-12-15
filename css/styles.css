@@ -366,6 +366,9 @@ button {
 .accept-link {
   color: var(--accent-color);
 }
+.accept-input:focus + .accept-checkbox {
+  border-color: var(--accent-color);
+}
 .accept-input:checked + .accept-checkbox {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
