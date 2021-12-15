@@ -69,65 +69,6 @@
           <!-- data-modal-open - на кнопку открытия модального окна. -->
         </div>
       </section>
-      <!-- Модальное окно -->
-      <div class="backdrop is-hidden" data-modal>
-        <div class="modal">
-          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-          <!-- Форма -->
-          <form class="modal-form" name="callback">
-            <label class="modal-item">
-              <span class="modal-label">Имя</span>
-              <input type="name" class="modal-input" name="name" placeholder=" " />
-              <svg class="modal-icon">
-                <use href="./images/icons.svg#icon-person"></use>
-              </svg>
-            </label>
-            <label class="modal-item">
-              <span class="modal-label">Телефон</span>
-              <input type="tel" class="modal-input" name="phone-number" placeholder=" " />
-              <svg class="modal-icon">
-                <use href="./images/icons.svg#icon-phone"></use>
-              </svg>
-            </label>
-            <label class="modal-item">
-              <span class="modal-label">Почта</span>
-              <input type="email" class="modal-input" name="email" placeholder=" " />
-              <svg class="modal-icon">
-                <use href="./images/icons.svg#icon-email"></use>
-              </svg>
-            </label>
-            <label class="modal-item">
-              <span class="modal-label">Комментарий</span>
-              <textarea
-                class="modal-textarea"
-                name="comment"
-                placeholder="Введите текст"
-              ></textarea>
-            </label>
-            <!-- Принять условия -->
-            <label class="accept-item">
-              <input type="checkbox" class="accept-input concealer" name="accept" required />
-              <div class="accept-checkbox">
-                <svg class="accept-icon">
-                  <use href="./images/icons.svg#icon-check"></use>
-                </svg>
-              </div>
-              <span class="accept-label"
-                >Соглашаюсь с рассылкой и принимаю
-                <a class="accept-link" href="" target="_blank">Условия договора</a>
-              </span>
-            </label>
-            <button class="modal-accept button" type="submit">Отправить</button>
-          </form>
-          <!-- Кнопка закрытия -->
-          <button class="modal-button" type="button" data-modal-close>
-            <svg class="modal-close" width="18px" height="18px">
-              <use href="./images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
-          <!-- data-modal-close - на кнопку закрытия модального окна. -->
-        </div>
-      </div>
       <!-- Особенности -->
       <section class="feature section">
         <div class="container">
@@ -542,7 +483,7 @@
         <!-- Подпишитесь -->
         <section class="subscribe">
           <h2 class="footer-title">Подпишитесь на рассылку</h2>
-          <form class="subscribe-form" name="subscribe">
+          <form class="subscribe-form" action="#" name="subscribe">
             <label>
               <input
                 class="subscribe-input"
@@ -561,6 +502,61 @@
         </section>
       </div>
     </footer>
+    <!-- Модальное окно -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
+        <!-- Форма -->
+        <form class="modal-form" action="#" name="callback">
+          <label class="modal-item">
+            <span class="modal-label">Имя</span>
+            <input type="name" class="modal-input" name="name" placeholder=" " />
+            <svg class="modal-icon">
+              <use href="./images/icons.svg#icon-person"></use>
+            </svg>
+          </label>
+          <label class="modal-item">
+            <span class="modal-label">Телефон</span>
+            <input type="tel" class="modal-input" name="phone-number" placeholder=" " />
+            <svg class="modal-icon">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+          </label>
+          <label class="modal-item">
+            <span class="modal-label">Почта</span>
+            <input type="email" class="modal-input" name="email" placeholder=" " />
+            <svg class="modal-icon">
+              <use href="./images/icons.svg#icon-email"></use>
+            </svg>
+          </label>
+          <label class="modal-item">
+            <span class="modal-label">Комментарий</span>
+            <textarea class="modal-textarea" name="comment" placeholder="Введите текст"></textarea>
+          </label>
+          <!-- Принять условия -->
+          <label class="accept-item">
+            <input type="checkbox" class="accept-input concealer" name="accept" required />
+            <div class="accept-checkbox">
+              <svg class="accept-icon">
+                <use href="./images/icons.svg#icon-check"></use>
+              </svg>
+            </div>
+            <span class="accept-label"
+              >Соглашаюсь с рассылкой и принимаю
+              <a class="accept-link" href="" target="_blank">Условия договора</a>
+            </span>
+          </label>
+          <button class="modal-accept button" type="submit">Отправить</button>
+        </form>
+        <!-- Кнопка закрытия -->
+        <button class="modal-button" type="button" data-modal-close>
+          <svg class="modal-close" width="18px" height="18px">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <!-- data-modal-close - на кнопку закрытия модального окна. -->
+      </div>
+    </div>
     <script src="./js/modal.js"></script>
   </body>
 </html>
